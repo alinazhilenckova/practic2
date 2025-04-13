@@ -4,8 +4,13 @@ class vertex :
        self.adjacent = []
 
 class Graph :
-    def__init__(self) :
+  def__init__(self) :
     self.vertices = []
+
+    def add_vertex(self, vertex_data):
+        vertex = Vertex(vertex_data)
+        self.vertices.append(vertex)
+        return vertex
 
     def add_vertex(self, src, dest) :
     src = self.find_vertex(src)
@@ -45,9 +50,9 @@ class Graph :
 
                                 for neighbor in vertex.adjacent :
                                     if neighbor not in visited :
-if dfs(neighbor) :
-    path.append(vertex.data)
-    return True
-    return False
-    dfs(start)
-    return path is path else None
+                                        if dfs(neighbor) :
+                                            path.append(vertex.data)
+                                            return True
+                                return False
+                            dfs(start)
+                            return path is path else None
